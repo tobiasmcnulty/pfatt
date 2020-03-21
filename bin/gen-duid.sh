@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ascii2hex() { echo -n "$*" | awk 'BEGIN{for(n=0;n<256;n++)ord[sprintf("%c",n)]=n}{len=split($0,c,"");for(i=1;i<=len;i++)printf("%x",ord[c[i]])}'; }
 
 printhexstring() { awk '{l=split($0,c,"");for(i=1;i<l-1;i=i+2)printf("%s:",substr($0,i,2));print(substr($0,l-1,2))}'; }
